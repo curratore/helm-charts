@@ -50,6 +50,8 @@ spec:
             --objstore.config=type: {{ .Values.compact.objStoreType }}
             config:
             {{- toYaml .Values.compact.objStoreConfig | nindent 14 }}
+          {{ else if .Values.compact.objStoreConfigFile }}
+          - --objstore.config-file={{ .Values.compact.objStoreConfigFile }}
           {{- end }}
           - --wait
           ports:

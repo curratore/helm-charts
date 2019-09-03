@@ -135,6 +135,7 @@ The following table lists the configurable parameters of the prometheus-thanos c
 | `storeGateway.objStoreType` | object store [type](https://github.com/thanos-io/thanos/blob/master/docs/storage.md) | `GCS` |
 | `storeGateway.additionalFlags` | additional command line flags | `{}` |
 | `storeGateway.objStoreConfig` | config for the [bucket store](https://github.com/thanos-io/thanos/blob/master/docs/storage.md) | `nil` |
+| `storeGateway.objStoreConfigFile` | config using a secret file for the [bucket store](https://github.com/thanos-io/thanos/blob/master/docs/storage.md) | `nil` |
 | `storeGateway.livenessProbe.initialDelaySeconds` | liveness probe initialDelaySeconds | `30` |
 | `storeGateway.livenessProbe.periodSeconds` | liveness probe periodSeconds | `10` |
 | `storeGateway.livenessProbe.successThreshold` | liveness probe successThreshold | `1` |
@@ -164,6 +165,7 @@ The following table lists the configurable parameters of the prometheus-thanos c
 | `compact.objStoreType` | object store [type](https://github.com/thanos-io/thanos/blob/master/docs/storage.md) | `GCS` |
 | `compact.additionalFlags` | additional command line flags | `{}` |
 | `compact.objStoreConfig` | config for the [bucket store](https://github.com/thanos-io/thanos/blob/master/docs/storage.md) | `nil` |
+| `compact.objStoreConfigFile` | config using a secret for the [bucket store](https://github.com/thanos-io/thanos/blob/master/docs/storage.md) | `nil` |
 | `compact.resources` | Resources | `{}` |
 | `compact.nodeSelector` | NodeSelector | `{}` |
 | `compact.tolerations` | Tolerations | `[]` |
@@ -185,6 +187,7 @@ The following table lists the configurable parameters of the prometheus-thanos c
 | `ruler.objStoreType` | object store [type](https://github.com/thanos-io/thanos/blob/master/docs/storage.md) | `GCS` |
 | `ruler.additionalFlags` | additional command line flags | `{}` |
 | `ruler.objStoreConfig` | config for the [bucket store](https://github.com/thanos-io/thanos/blob/master/docs/storage.md) | `nil` |
+| `ruler.objStoreConfigFile` | config using a secret for the [bucket store](https://github.com/thanos-io/thanos/blob/master/docs/storage.md) | `nil` |
 | `ruler.config` | default ruler config | `nil` |
 | `ruler.resources` | Resources | `{}` |
 | `ruler.nodeSelector` | NodeSelector | `{}` |
@@ -198,6 +201,7 @@ The following table lists the configurable parameters of the prometheus-thanos c
 | `ruler.persistentVolume.existingClaim` | persistent volume existingClaim | `""` |
 | `ruler.persistentVolume.size` | persistent volume size | `2Gi` |
 | `ruler.persistentVolume.storageClass` | Persistent volume storage class name | `""` |
+| `objectStoreSecret` | Configuration object to create a secret | `""` |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example:
 
